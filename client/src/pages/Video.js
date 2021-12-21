@@ -37,9 +37,9 @@ const SingleVideo = () => {
     }
 
     let viewsTag = "";
-    if (level > 0) {
+    if (level > 0) { // if user is logged in, show views 
       viewsTag = `Views: ${video.views}`
-    } else { viewsTag = "" };
+    } else { viewsTag = "" }; // if user is not logged in (level = -1), dont show views
     // Tracks views based on page reload
     const updateMetrics = () => {
       const newView = (video.views + 1);
@@ -108,7 +108,7 @@ const SingleVideo = () => {
 
               {level >= 0 ? (<p><button className='button6' disabled={disable} onClick={clickLike}><i className="fas fa-thumbs-up"></i></button>
 
-                <button className='button6' disabled={disable} onClick={clickDislike}><i className="fas fa-thumbs-down"></i></button></p>): ("")}
+                <button className='button6' disabled={disable} onClick={clickDislike}><i className="fas fa-thumbs-down"></i></button></p>) : ("")}
 
 
             </Card.Body >
